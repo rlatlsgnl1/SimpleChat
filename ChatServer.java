@@ -84,7 +84,8 @@ class ChatThread extends Thread{
 //	만약 클라언트에게서 온 메시지에 spam이 있다면 전달하지 않고 사용자에게 경고함.
 				for(int i=0;i<spam.size();i++) {
 					if(line.contains(spam.get(i))) {
-						warn();
+						if(!(line.indexOf("/addspam ")==0))
+							warn();
 						continue;
 					}
 				}
